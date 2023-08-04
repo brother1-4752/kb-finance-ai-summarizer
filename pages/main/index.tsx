@@ -37,6 +37,7 @@ const MainForm = styled.form`
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 15px;
 `
 
 const MainLabel = styled.label`
@@ -60,6 +61,28 @@ const MainInput = styled.input`
     display: none;
 `
 
+const MainTable = styled.table`
+    width: 90%;
+`
+
+const MainTableHead = styled.thead`
+    line-height: 50px;
+
+    background-color: #343A3F;
+    color: white;
+`
+
+const MainTableBody = styled.tbody`
+    line-height: 50px;
+    tr {
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+    }
+
+    tr > td{
+        text-align: center;
+    }
+`
+
 export default function Main(){
     const {register, handleSubmit, watch, formState: { errors }} = useForm();
 
@@ -76,23 +99,65 @@ export default function Main(){
             <MainInput {...register("pdf-file")} id="pdf-file" type="file" accept=".pdf" />
         </MainForm>
 
-        {/* <table>
-            <thead>
-                <th>리포트 이름</th>
-                <th>생성 일자</th>
-                <th>카테고리</th>
-                <th>원본</th>
-                <th>요약본</th>
-            </thead>
-            <tbody className="content_table--body">
+        <MainTable>
+            <MainTableHead>
                 <tr>
-                    <td>리포트1</td>
-                    <td>23.8.2 15:37</td>
-                    <td>경제</td>
-                    <td></td>
-                    <td></td>
+                    <th>리포트 이름</th>
+                    <th>생성 일자</th>
+                    <th>원본</th>
+                    <th>요약본</th>
+                    <th>수정본</th>
+                    <th></th>
+                    <th></th>
                 </tr>
-            </tbody>
-        </table> */}
+            </MainTableHead>
+            <MainTableBody>
+                <tr>
+                    <td>예시0</td>
+                    <td>23.8.5</td>
+                    <td>원본</td>
+                    <td>요약본</td>
+                    <td>수정본</td>
+                    <td>수정</td>
+                    <td>삭제</td>
+                </tr>
+                <tr>
+                    <td>예시1</td>
+                    <td>23.8.5</td>
+                    <td>원본</td>
+                    <td>요약본</td>
+                    <td>수정본</td>
+                    <td>수정</td>
+                    <td>삭제</td>
+                </tr>
+                <tr>
+                    <td>예시2</td>
+                    <td>23.8.5</td>
+                    <td>원본</td>
+                    <td>요약본</td>
+                    <td>수정본</td>
+                    <td>수정</td>
+                    <td>삭제</td>
+                </tr>
+                <tr>
+                    <td>예시3</td>
+                    <td>23.8.5</td>
+                    <td>원본</td>
+                    <td>요약본</td>
+                    <td>수정본</td>
+                    <td>수정</td>
+                    <td>삭제</td>
+                </tr>
+                <tr>
+                    <td>예시4</td>
+                    <td>23.8.5</td>
+                    <td>원본</td>
+                    <td>요약본</td>
+                    <td>수정본</td>
+                    <td>수정</td>
+                    <td>삭제</td>
+                </tr>
+            </MainTableBody>
+        </MainTable>        
     </MainContainer>
 }
