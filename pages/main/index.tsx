@@ -126,6 +126,8 @@ export default function Main() {
   const [tableList, setTableList] = useState<any[][]>([])
   const [isDragging, setIsDragging] = useState(false)
 
+  console.log(tableList)
+
   const handleDragOver = (event) => {
     event.preventDefault()
     setIsDragging(true)
@@ -208,6 +210,12 @@ export default function Main() {
     }
   }
 
+  const handleDelete = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const fileTitle =  console.dir(event.target.parentElement.parentElement.children[0].innerHTML)
+
+    setTableList((prev) => prev.filter((el) => el[0] !== fileTitle))
+  }
+
   return (
     <MainContainer>
       <MainHeader>
@@ -280,7 +288,9 @@ export default function Main() {
               </td>
               <td>요약본</td>
               <td>수정</td>
-              <td>삭제</td>
+              <td>
+                <button onClick={handleDelete}>삭제</button>
+              </td>
             </tr>
           ))}
         </MainTableBody>
