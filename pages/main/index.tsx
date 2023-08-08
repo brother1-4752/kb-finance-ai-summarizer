@@ -126,8 +126,6 @@ export default function Main() {
   const [tableList, setTableList] = useState<any[][]>([])
   const [isDragging, setIsDragging] = useState(false)
 
-  console.log(tableList)
-
   const handleDragOver = (event) => {
     event.preventDefault()
     setIsDragging(true)
@@ -211,9 +209,14 @@ export default function Main() {
   }
 
   const handleDelete = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const fileTitle =  console.dir(event.target.parentElement.parentElement.children[0].innerHTML)
-
-    setTableList((prev) => prev.filter((el) => el[0] !== fileTitle))
+    const fileTitle =  event.currentTarget.parentElement?.parentElement?.children[0].innerHTML
+    console.log("tablelist: ",tableList[0][0])
+    console.log("fileTitle: ", fileTitle)
+    const isConfirmed = confirm(`${fileTitle}컨텐츠를 삭제하시겠습니까?`)
+    if(isConfirmed){
+      setTableList((prev) => prev.filter((el) => el[0] !== fileTitle))
+      alert("삭제되었습니다.")
+    }
   }
 
   return (
@@ -271,7 +274,7 @@ export default function Main() {
           </tr>
         </MainTableHead>
         <MainTableBody>
-          {tableList.reverse().map((el, index) => (
+          {tableList.map((el, index) => (
             <tr key={index}>
               <td>{el[0]}</td>
               <td>{el[1]}</td>
