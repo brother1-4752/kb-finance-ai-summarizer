@@ -12,13 +12,13 @@ const Layout = ({ children }: PropsWithChildren) => {
 export default Layout
 
 const TempBody = styled.div`
-  background: #f2f2f2;
+  background: white;
 `
 
 const LayoutContainer = styled.div`
   width: 100%;
-  min-height: 100vh;
   margin: 0 auto;
-
-  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
