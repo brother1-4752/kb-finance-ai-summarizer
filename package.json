@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@react-pdf/renderer": "^3.1.12",
     "@types/node": "20.4.5",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
@@ -18,9 +19,16 @@
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
     "next": "13.4.12",
+    "pdf-lib": "^1.17.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.45.2",
+    "react-loader-spinner": "^5.3.4",
+    "react-pdf": "^7.3.3",
+    "react-spinners": "^0.13.8",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "raw-loader": "^4.0.2"
   }
 }
