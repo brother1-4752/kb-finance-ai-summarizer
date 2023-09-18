@@ -4,9 +4,14 @@ import { useRouter } from 'next/router'
 function Home() {
   const router = useRouter()
 
+  const fetchPythonFeatures = () => {
+    fetch('/')
+  }
+
   return (
     <HomeContainer>
       <button onClick={() => router.push('/main')}>시 작 하 기</button>
+      <button onClick={fetchPythonFeatures}>테스트</button>
     </HomeContainer>
   )
 }
@@ -35,6 +40,10 @@ const HomeContainer = styled.div`
     &:hover {
       cursor: pointer;
       opacity: 0.8;
+    }
+
+    &:nth-child(2) {
+      left: 400px;
     }
   }
 `
